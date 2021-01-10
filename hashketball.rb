@@ -127,3 +127,15 @@ def game_hash
 end
 
 # Write code here
+def num_points_scored(playerName)
+    info = game_hash
+    point = 0
+     list_of_players = info.map do |key, value|
+        value[:players].map do |element|
+            if (element[:player_name] == playerName)
+                point = element[:points]
+            end
+        end
+     end
+     point
+  end
