@@ -220,3 +220,20 @@ def player_numbers(teamName)
     end
     max
 end
+
+def big_shoe_rebounds
+    info = game_hash
+    biggestShoeSize = []
+    maxShoeSize = 0
+    maxReboundNumber = 0
+     list_of_players = info.map do |key, value|
+        value[:players].map do |element|
+            # element[:shoe]
+            if (element[:shoe] > maxShoeSize)
+                maxShoeSize = element[:shoe]
+                maxReboundNumber = element[:rebounds]
+            end
+        end
+     end
+    maxReboundNumber
+end
