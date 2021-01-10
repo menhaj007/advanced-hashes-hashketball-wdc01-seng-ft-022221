@@ -200,3 +200,23 @@ def player_numbers(teamName)
     end
     playerInfo
   end
+  
+  def big_shoe_rebounds(teamName)
+    info = game_hash
+    number = []
+     list_of_players = info.map do |key, value|
+        if (value[:team_name] == teamName)
+            # number.push(value[:player][:number])
+            value[:players].map do |element|
+                number.push(element[:rebounds])
+            end
+        end
+     end
+     max = number[0]
+     number.each do |element|
+        if (element > max)
+            max = element
+        end
+    end
+    max
+end
