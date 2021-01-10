@@ -164,3 +164,10 @@ def num_points_scored(playerName)
         element
     end
   end
+  
+  def team_names
+    info = game_hash
+    info.map do |key, value|
+        value[:team_name]
+    end
+end
