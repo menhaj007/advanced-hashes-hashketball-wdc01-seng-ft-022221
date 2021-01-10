@@ -186,3 +186,17 @@ def player_numbers(teamName)
      end
      number
   end
+  
+  def player_stats(playerName)
+    info = game_hash
+    playerInfo = {}
+    info.map do |key, value|
+        value[:players].map do |element|
+            # element[:player_name]
+            if (element[:player_name] == playerName)
+                playerInfo = element
+            end
+        end
+    end
+    playerInfo
+  end
