@@ -139,3 +139,15 @@ def num_points_scored(playerName)
      end
      point
   end
+  def shoe_size(playerName)
+    info = game_hash
+    point = 0
+     list_of_players = info.map do |key, value|
+        value[:players].map do |element|
+            if (element[:player_name] == playerName)
+                point = element[:shoe]
+            end
+        end
+     end
+     point
+  end
