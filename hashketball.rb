@@ -156,7 +156,7 @@ def num_points_scored(playerName)
     info = game_hash
     colors_of_team = []
      list_of_players = info.map do |key, value|
-        if (value[:team_name] == "Brooklyn Nets")
+        if (value[:team_name] == teamName)
             colors_of_team = value[:colors]
         end
      end
