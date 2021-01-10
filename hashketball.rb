@@ -172,14 +172,16 @@ def num_points_scored(playerName)
     end
 end
 
-def player_numbers(playerName)
+def player_numbers(teamName)
     info = game_hash
-    number = 0
+    number = []
      list_of_players = info.map do |key, value|
-        value[:players].map do |element|
-            if (element[:player_name] == playerName)
-                number = element[:number]
+        if (value[:team_name] == teamName)
+            # number.push(value[:player][:number])
+            value[:players].map do |element|
+                number.push(element[:number])
             end
+
         end
      end
      number
